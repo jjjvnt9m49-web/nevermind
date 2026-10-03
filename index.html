@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEVERMIND</title>
+<meta name="description" content="NEVERMIND — attualità, cultura, società, lifestyle, opinioni e storie.">
+
+<style>
+:root{
+  --bg:#f6f7f8;
+  --white:#ffffff;
+  --navy:#102447;
+  --navy-light:#1b3560;
+  --cherry:#8e2638;
+  --cherry-dark:#701d2d;
+  --cherry-soft:#f3e5e8;
+  --text:#151922;
+  --muted:#687080;
+  --line:#dfe3e8;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1400px,calc(100% - 56px));
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+}
+
+.header-top{
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.logo{
+  color:var(--navy);
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:clamp(46px,6.2vw,82px);
+  font-weight:900;
+  letter-spacing:-5px;
+  line-height:1;
+}
+
+.header-actions{
+  position:absolute;
+  right:0;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  color:var(--navy);
+  font-size:17px;
+}
+
+.nav{
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:clamp(18px,3.5vw,50px);
+  padding:16px 0;
+  overflow-x:auto;
+}
+
+.nav a{
+  color:var(--navy);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.nav a:hover,
+.nav a.active{
+  color:var(--cherry);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  display:grid;
+  grid-template-columns:1.75fr 1fr;
+  gap:24px;
+  padding-top:30px;
+}
+
+.feature{
+  position:relative;
+  min-height:590px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 78% 23%,rgba(142,38,56,.85),transparent 25%),
+    linear-gradient(135deg,#dbe3ef 0%,#aebed6 46%,#162d55 100%);
+}
+
+.feature::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(10,24,49,.92),transparent 62%);
+}
+
+.feature-content{
+  position:absolute;
+  z-index:2;
+  left:42px;
+  right:42px;
+  bottom:40px;
+  color:white;
+}
+
+.category{
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:var(--cherry);
+}
+
+.feature .category{
+  color:#f1c8d0;
+}
+
+.feature h1{
+  max-width:850px;
+  margin:10px 0 16px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(39px,4.7vw,68px);
+  line-height:1.01;
+  font-weight:400;
+}
+
+.feature p{
+  max-width:650px;
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.45;
+}
+
+.read-button{
+  display:inline-block;
+  margin-top:23px;
+  padding:12px 20px;
+  border:1px solid rgba(255,255,255,.9);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ================= SIDE STORIES ================= */
+
+.side-stories{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:24px;
+}
+
+.side-story{
+  display:grid;
+  grid-template-columns:42% 58%;
+  min-height:283px;
+  background:var(--white);
+  border:1px solid var(--line);
+}
+
+.side-image{
+  min-height:100%;
+  background:
+    linear-gradient(145deg,#dbe4f2,#8ca0c3);
+}
+
+.side-story:nth-child(2) .side-image{
+  background:
+    linear-gradient(145deg,#f1dfe3,#8e2638);
+}
+
+.side-copy{
+  padding:28px 24px;
+}
+
+.side-copy h2{
+  margin:7px 0 12px;
+  color:var(--navy);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  line-height:1.08;
+  font-weight:400;
+}
+
+.side-copy p{
+  margin:0;
+  color:var(--muted);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  line-height:1.45;
+}
+
+.arrow{
+  display:block;
+  margin-top:23px;
+  color:var(--cherry);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  padding-top:64px;
+}
+
+.section-heading{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:22px;
+}
+
+.section-heading h2{
+  margin:0;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.rule{
+  height:1px;
+  flex:1;
+  background:var(--line);
+}
+
+.section-heading a{
+  color:var(--cherry);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+}
+
+.card-image{
+  height:250px;
+  background:linear-gradient(135deg,#dce4ef,#7286a9);
+}
+
+.card:nth-child(2) .card-image{
+  background:linear-gradient(135deg,#e8dfe5,#8e2638);
+}
+
+.card:nth-child(3) .card-image{
+  background:linear-gradient(135deg,#e7ebf2,#253e69);
+}
+
+.card-copy{
+  padding:21px 19px 25px;
+}
+
+.card h3{
+  margin:8px 0 11px;
+  color:var(--navy);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:29px;
+  line-height:1.08;
+  font-weight:400;
+}
+
+.card p{
+  margin:0;
+  color:var(--muted);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:15px;
+  line-height:1.45;
+}
+
+/* ================= OPINION STRIP ================= */
+
+.opinion{
+  margin-top:64px;
+  background:var(--navy);
+  color:white;
+  padding:44px 48px;
+  display:grid;
+  grid-template-columns:1fr 1.7fr;
+  gap:45px;
+  align-items:center;
+}
+
+.opinion-label{
+  color:#eabac3;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.opinion h2{
+  margin:9px 0 0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:39px;
+  line-height:1.08;
+  font-weight:400;
+}
+
+.opinion p{
+  margin:0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:20px;
+  line-height:1.5;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  margin-top:64px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  padding:44px;
+  background:var(--white);
+  border:1px solid var(--line);
+}
+
+.about h2{
+  margin:9px 0 17px;
+  color:var(--navy);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:46px;
+  line-height:1.03;
+  font-weight:400;
+}
+
+.about p{
+  max-width:620px;
+  margin:0;
+  color:var(--muted);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+  line-height:1.55;
+}
+
+.manifesto{
+  display:flex;
+  align-items:center;
+  border-left:3px solid var(--cherry);
+  padding-left:35px;
+}
+
+.manifesto p{
+  color:var(--navy);
+  font-size:27px;
+  line-height:1.35;
+  font-style:italic;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  margin-top:65px;
+  padding:29px 0 45px;
+  border-top:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:var(--navy);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.footer-brand{
+  color:var(--cherry);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+
+  .feature{
+    min-height:530px;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .cards .card:last-child{
+    grid-column:1/-1;
+  }
+
+  .opinion{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:680px){
+  .container{
+    width:calc(100% - 30px);
+  }
+
+  .header-top{
+    height:88px;
+  }
+
+  .logo{
+    font-size:48px;
+    letter-spacing:-3px;
+  }
+
+  .header-actions{
+    display:none;
+  }
+
+  .nav{
+    justify-content:flex-start;
+    gap:25px;
+  }
+
+  .feature{
+    min-height:500px;
+  }
+
+  .feature-content{
+    left:25px;
+    right:25px;
+    bottom:27px;
+  }
+
+  .feature h1{
+    font-size:39px;
+  }
+
+  .side-story{
+    grid-template-columns:1fr;
+  }
+
+  .side-image{
+    min-height:180px;
+  }
+
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .cards .card:last-child{
+    grid-column:auto;
+  }
+
+  .opinion{
+    padding:32px 25px;
+  }
+
+  .opinion h2{
+    font-size:33px;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+    padding:30px 24px;
+  }
+
+  .about h2{
+    font-size:39px;
+  }
+
+  .manifesto{
+    border-left:0;
+    border-top:3px solid var(--cherry);
+    padding:27px 0 0;
+  }
+
+  footer{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-top">
+      <a href="#home" class="logo">NEVERMIND</a>
+
+      <div class="header-actions">
+        <span>⌕</span>
+        <span>◎</span>
+        <span>☰</span>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a class="active" href="#home">Home</a>
+      <a href="#attualita">Attualità</a>
+      <a href="#opinioni">Opinioni</a>
+      <a href="#cultura">Cultura</a>
+      <a href="#societa">Società</a>
+      <a href="#lifestyle">Lifestyle</a>
+      <a href="#viaggi">Viaggi</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home" class="container">
+
+  <section class="hero">
+
+    <article class="feature">
+      <div class="feature-content">
+        <div class="category">Attualità</div>
+        <h1>Il mondo cambia. Noi cambiamo con lui.</h1>
+        <p>
+          Idee, fatti e prospettive per capire meglio quello che succede
+          intorno a noi.
+        </p>
+        <a href="#" class="read-button">Leggi l'articolo →</a>
+      </div>
+    </article>
+
+    <div class="side-stories">
+
+      <article class="side-story" id="lifestyle">
+        <div class="side-image"></div>
+        <div class="side-copy">
+          <div class="category">Lifestyle</div>
+          <h2>Vivere meglio senza complicarsi la vita</h2>
+          <p>Abitudini, tendenze e piccoli cambiamenti che fanno la differenza.</p>
+          <a href="#" class="arrow">Scopri →</a>
+        </div>
+      </article>
+
+      <article class="side-story">
+        <div class="side-image"></div>
+        <div class="side-copy">
+          <div class="category">Viaggi</div>
+          <h2>Luoghi da vedere almeno una volta</h2>
+          <p>Viaggi, destinazioni e idee per uscire dai soliti percorsi.</p>
+          <a href="#" class="arrow">Scopri →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section" id="attualita">
+    <div class="section-heading">
+      <h2>Ultimi articoli</h2>
+      <div class="rule"></div>
+      <a href="#">Vedi tutti →</a>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="card-image"></div>
+        <div class="card-copy">
+          <div class="category">Società</div>
+          <h3>Essere giovani oggi: tra possibilità e pressioni</h3>
+          <p>Una generazione che prova a costruire il proprio spazio in un mondo sempre più veloce.</p>
+        </div>
+      </article>
+
+      <article class="card" id="cultura">
+        <div class="card-image"></div>
+        <div class="card-copy">
+          <div class="category">Cultura</div>
+          <h3>Perché abbiamo ancora bisogno delle storie</h3>
+          <p>Libri, cinema, musica e tutto ciò che continua a raccontare chi siamo.</p>
+        </div>
+      </article>
+
+      <article class="card" id="societa">
+        <div class="card-image"></div>
+        <div class="card-copy">
+          <div class="category">Società</div>
+          <h3>Social media: quanto spazio lasciamo agli altri?</h3>
+          <p>Tra identità digitale, confronto e bisogno di essere visti.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="opinion" id="opinioni">
+    <div>
+      <div class="opinion-label">Nevermind Opinion</div>
+      <h2>Non solo notizie. Anche un punto di vista.</h2>
+    </div>
+
+    <p>
+      NEVERMIND vuole raccontare l'attualità, ma anche lasciare spazio
+      alle domande, alle opinioni e alle conversazioni che nascono
+      intorno a ciò che succede.
+    </p>
+  </section>
+
+  <section class="about" id="about">
+
+    <div>
+      <div class="category">About Nevermind</div>
+      <h2>Un posto per parlare di quello che ci interessa davvero.</h2>
+      <p>
+        Attualità, cultura, società, lifestyle, viaggi e opinioni.
+        NEVERMIND è uno spazio personale ma aperto al mondo:
+        non deve parlare di una sola cosa, deve parlare di ciò che vale
+        la pena raccontare.
+      </p>
+    </div>
+
+    <div class="manifesto">
+      <p>
+        “Curiosità prima di tutto.<br>
+        Un punto di vista, sempre.<br>
+        Nessun argomento è troppo grande o troppo piccolo.”
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="container">
+  <span class="footer-brand">NEVERMIND</span>
+  <span>Attualità · Idee · Storie</span>
+  <span>© 2026</span>
+</footer>
+
+</body>
+</html>
